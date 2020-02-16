@@ -120,12 +120,10 @@ return [
     */
 
     'providers' => [
-        App\Providers\ThemeServiceProvider::class,
-        Stage\Gutenberg\Gutenberg::class,
+        Stage\Providers\BlockEditorServiceProvider::class,
+        Stage\Providers\ImagesServiceProvider::class,
         Stage\Customizer\Customizer::class,
-        Stage\Providers\ImagesServiceProvider::class
-        // Stage\Providers\ImagesServiceProvider::class,
-        // App\SomeService\SomeServiceServiceProvider::class,
+        // App\Providers\ThemeServiceProvider::class,
     ],
 
     /*

@@ -77,15 +77,20 @@ return [
 
     'composers' => [
         // Stage default View Composers
-        Stage\Composers\Alert::class,
         Stage\Composers\App::class,
-        Stage\Composers\Archive::class,
-        Stage\Composers\ArchiveItem::class,
-        Stage\Composers\Footer::class,
-        Stage\Composers\Header::class,
-        Stage\Composers\Navigation::class,
         Stage\Composers\Shop::class,
-        Stage\Composers\Title::class,
+
+        Stage\Composers\Components\Alert::class,
+        Stage\Composers\Components\Title::class,
+
+        Stage\Composers\Partials\Header::class,
+        Stage\Composers\Partials\Header\Navigation::class,
+
+        Stage\Composers\Partials\Footer::class,
+        Stage\Composers\Partials\Footer\Navigation::class,
+
+        Stage\Composers\Partials\Archive::class,
+        Stage\Composers\Partials\Archive\Item::class,
 
         // Add your own
         // App\Composers\Alert::class,
