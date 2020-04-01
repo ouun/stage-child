@@ -1,139 +1,131 @@
 <?php
 
-return [
+use function Stage\stage_config;
 
-    /*
-    |--------------------------------------------------------------------------
-    | View Storage Paths
-    |--------------------------------------------------------------------------
-    |
-    | Most template systems load templates from disk. Here you may specify
-    | an array of paths that should be checked for your views.
-    |
-    */
+return array(
 
-    'paths' => [
-        get_theme_file_path('/resources/views'),
-        get_parent_theme_file_path('/resources/views'),
-    ],
+	/*
+	|--------------------------------------------------------------------------
+	| View Storage Paths
+	|--------------------------------------------------------------------------
+	|
+	| Most template systems load templates from disk. Here you may specify
+	| an array of paths that should be checked for your views.
+	|
+	*/
 
-    /*
-    |--------------------------------------------------------------------------
-    | Compiled View Path
-    |--------------------------------------------------------------------------
-    |
-    | This option determines where all the compiled Blade templates will be
-    | stored for your application. Typically, this is within the uploads
-    | directory. However, as usual, you are free to change this value.
-    |
-    */
+	'paths'      => array(
+		get_theme_file_path( '/resources/views' ),
+		get_parent_theme_file_path( '/resources/views' ),
+	),
 
-    'compiled' => get_theme_file_path('/storage/framework/views'),
+	/*
+	|--------------------------------------------------------------------------
+	| Compiled View Path
+	|--------------------------------------------------------------------------
+	|
+	| This option determines where all the compiled Blade templates will be
+	| stored for your application. Typically, this is within the uploads
+	| directory. However, as usual, you are free to change this value.
+	|
+	*/
 
-    /*
-    |--------------------------------------------------------------------------
-    | View Debugger
-    |--------------------------------------------------------------------------
-    |
-    | Enabling this option will display the current view name and data. Giving
-    | it a value of 'view' will only display view names. Giving it a value of
-    | 'data' will only display current data. Giving it any other truthy value
-    | will display both.
-    |
-    */
+	'compiled'   => get_theme_file_path( '/storage/framework/views' ),
 
-    'debug' => false,
+	/*
+	|--------------------------------------------------------------------------
+	| View Debugger
+	|--------------------------------------------------------------------------
+	|
+	| Enabling this option will display the current view name and data. Giving
+	| it a value of 'view' will only display view names. Giving it a value of
+	| 'data' will only display current data. Giving it any other truthy value
+	| will display both.
+	|
+	*/
 
-    /*
-    |--------------------------------------------------------------------------
-    | View Namespaces
-    |--------------------------------------------------------------------------
-    |
-    | Blade has an underutilized feature that allows developers to add
-    | supplemental view paths that may contain conflictingly named views.
-    | These paths are prefixed with a namespace to get around the conflicts.
-    | A use case might be including views from within a plugin folder.
-    |
-    */
+	'debug'      => false,
 
-    'namespaces' => [
-        /*
-         | Given the below example, in your views use something like:
-         |     @include('Stage::some.view.or.partial.here')
-         */
-        'Stage' => get_parent_theme_file_path('/resources/views'),
-    ],
+	/*
+	|--------------------------------------------------------------------------
+	| View Namespaces
+	|--------------------------------------------------------------------------
+	|
+	| Blade has an underutilized feature that allows developers to add
+	| supplemental view paths that may contain conflictingly named views.
+	| These paths are prefixed with a namespace to get around the conflicts.
+	| A use case might be including views from within a plugin folder.
+	|
+	*/
 
-    /*
-    |--------------------------------------------------------------------------
-    | View Composers
-    |--------------------------------------------------------------------------
-    |
-    | View composers allow data to always be passed to certain views. This can
-    | be useful when passing data to components such as hero elements,
-    | navigation, banners, etc.
-    |
-    */
+	'namespaces' => array(
+		/*
+		 | Given the below example, in your views use something like:
+		 |     @include('Stage::some.view.or.partial.here')
+		 */
+		'Stage' => get_parent_theme_file_path( '/resources/views' ),
+	),
 
-    'composers' => [
-        // Stage default View Composers
-        Stage\Composers\App::class,
-        Stage\Composers\Shop::class,
+	/*
+	|--------------------------------------------------------------------------
+	| View Composers
+	|--------------------------------------------------------------------------
+	|
+	| View composers allow data to always be passed to certain views. This can
+	| be useful when passing data to components such as hero elements,
+	| navigation, banners, etc.
+	|
+	*/
 
-        Stage\Composers\Components\Alert::class,
-        Stage\Composers\Components\Title::class,
+	'composers'  => array_merge(
+		array(
+			// Add your own
+			// App\Composers\Alert::class,
+		),
+		stage_config( 'view.composers' )
+	),
 
-        Stage\Composers\Partials\Header::class,
-        Stage\Composers\Partials\Header\Navigation::class,
+	/*
+	|--------------------------------------------------------------------------
+	| View Directives
+	|--------------------------------------------------------------------------
+	|
+	| The namespaces where view components reside. Components can be referenced
+	| with camelCase & dot notation.
+	|
+	*/
 
-        Stage\Composers\Partials\Footer::class,
-        Stage\Composers\Partials\Footer\Navigation::class,
+	'directives' => array_merge(
+		array(
+			'asset' => Roots\Acorn\Assets\AssetDirective::class,
+		),
+		stage_config( 'view.directives' )
+	),
 
-        Stage\Composers\Partials\Archive::class,
-        Stage\Composers\Partials\Archive\Item::class,
+	/*
+	|--------------------------------------------------------------------------
+	| Blade Component Aliases
+	|--------------------------------------------------------------------------
+	|
+	| Component aliases allow you to use a shorthand to call a Blade component.
+	| Instead of referencing your components like this:
+	|
+	| @component('components.alert', ['type' => 'warning'])
+	|   {{ __('Page not found') }}
+	| @endcomponent
+	|
+	| You can use an alias instead:
+	|
+	| @alert(['type' => 'error'])
+	|   {{ __('Page not found') }}
+	| @endalert
+	|
+	| Use the key to set the alias and the value to set the path to the
+	| view.
+	|
+	*/
 
-        // Add your own
-        // App\Composers\Alert::class,
-    ],
-
-    /*
-    |--------------------------------------------------------------------------
-    | View Directives
-    |--------------------------------------------------------------------------
-    |
-    | The namespaces where view components reside. Components can be referenced
-    | with camelCase & dot notation.
-    |
-    */
-
-    'directives' => [
-        'asset'  => Roots\Acorn\Assets\AssetDirective::class,
-    ],
-
-   /*
-    |--------------------------------------------------------------------------
-    | Blade Component Aliases
-    |--------------------------------------------------------------------------
-    |
-    | Component aliases allow you to use a shorthand to call a Blade component.
-    | Instead of referencing your components like this:
-    |
-    | @component('components.alert', ['type' => 'warning'])
-    |   {{ __('Page not found') }}
-    | @endcomponent
-    |
-    | You can use an alias instead:
-    |
-    | @alert(['type' => 'error'])
-    |   {{ __('Page not found') }}
-    | @endalert
-    |
-    | Use the key to set the alias and the value to set the path to the
-    | view.
-    |
-    */
-
-    'components' => [
-        'alert'  => 'components.alert',
-    ],
-];
+	'components' => array(
+		'alert' => 'components.alert',
+	),
+);
