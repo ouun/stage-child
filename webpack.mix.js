@@ -19,7 +19,7 @@ const { whitelist, whitelistPatterns } = require('purgecss-with-wordpress');
 
 mix.setPublicPath('./dist')
   .browserSync({
-    proxy: 'example.test',
+    proxy: 'sueco.test',
     port: '1987',
   });
 
