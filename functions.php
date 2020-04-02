@@ -25,20 +25,6 @@ if ( ! wp_get_theme( 'stage' )->exists() ) {
 }
 
 /**
- * Ensure a compatible version of PHP is being used.
- */
-if ( version_compare( '7.2', phpversion(), '>' ) ) {
-	$sage_error( __( 'You must be using PHP 7.2 or greater.', 'stage' ), __( 'Invalid PHP version', 'stage' ) );
-}
-
-/**
- * Ensure a compatible version of WordPress is being used.
- */
-if ( version_compare( '5.2', get_bloginfo( 'version' ), '>' ) ) {
-	$sage_error( __( 'You must be using WordPress 5.2 or greater.', 'stage' ), __( 'Invalid WordPress version', 'stage' ) );
-}
-
-/**
  * Ensure dependencies are loaded.
  */
 if ( ! file_exists( $composer = __DIR__ . '/vendor/autoload.php' ) ) {

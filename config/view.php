@@ -81,6 +81,7 @@ return array(
 		array(
 			// Add your own
 			// App\Composers\Alert::class,
+            Stage\View\Composers\Post::class,
 		),
 		stage_config( 'view.composers' )
 	),

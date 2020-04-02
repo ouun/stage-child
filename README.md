@@ -27,9 +27,9 @@ See a working example at [roots-example-project.com](https://roots-example-proje
 
 Make sure all dependencies have been installed before moving on:
 
-* [WordPress](https://wordpress.org/) >= 5.2
-* [Stage Theme Framework](https://github.com.org/ouun/stage) available under `wp-content/stage`
-* [PHP](https://secure.php.net/manual/en/install.php) >= 7.1.3 (with [`php-mbstring`](https://secure.php.net/manual/en/book.mbstring.php) enabled)
+* [WordPress](https://wordpress.org/) >= 5.4
+* [Stage Theme Framework](https://github.com.org/ouun/stage) available under `wp-content/themes/stage`
+* [PHP](https://secure.php.net/manual/en/install.php) >= 7.2.0 (with [`php-mbstring`](https://secure.php.net/manual/en/book.mbstring.php) enabled)
 
 
 With love from Europe by [ouun.io](https://ouun.io/)

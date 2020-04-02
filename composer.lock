@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "801d1c8118ca500eed1d4b0456b89880",
+    "content-hash": "0f11b200e1e28a2866478b791ee10960",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -1068,16 +1068,16 @@
         },
         {
             "name": "roots/acorn",
-            "version": "dev-master",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/roots/acorn.git",
-                "reference": "9867c215530f2307bbfb18cc4f78addce36e97ea"
+                "reference": "112b62759c19b1ef4f5f9a87f4250e51276fdb94"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/roots/acorn/zipball/9867c215530f2307bbfb18cc4f78addce36e97ea",
-                "reference": "9867c215530f2307bbfb18cc4f78addce36e97ea",
+                "url": "https://api.github.com/repos/roots/acorn/zipball/112b62759c19b1ef4f5f9a87f4250e51276fdb94",
+                "reference": "112b62759c19b1ef4f5f9a87f4250e51276fdb94",
                 "shasum": ""
             },
             "require": {
@@ -1141,7 +1141,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2020-03-24T19:32:54+00:00"
+            "time": "2020-03-24T03:54:52+00:00"
         },
         {
             "name": "roots/support",
@@ -2023,13 +2023,11 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "roots/acorn": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": "^7.2"
+        "php": "^7.2.5"
     },
     "platform-dev": [],
     "plugin-api-version": "1.1.0"
