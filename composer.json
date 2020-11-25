@@ -27,7 +27,7 @@
     "php": "^7.2.5",
     "log1x/navi": "^1.0",
     "log1x/sage-svg": "^1.0",
-    "roots/acorn": "^1.0.1"
+    "roots/acorn": "^1.1"
   },
   "require-dev": {
     "filp/whoops": "^2.5",

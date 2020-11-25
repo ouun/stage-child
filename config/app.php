@@ -129,12 +129,13 @@ return array(
          * Application Service Providers
          */
 		App\Providers\ThemeServiceProvider::class,
-		Stage\Providers\Images::class,
-		Stage\Providers\BlockEditor::class,
-		Stage\Customizer\Customizer::class,
-		Stage\Providers\ShopFilters::class,
-		Stage\Providers\ShopExtras::class,
-		Stage\Providers\ShopCheckout::class,
+        Stage\Providers\MegaMenu::class,
+        Stage\Providers\Images::class,
+        Stage\Providers\BlockEditor::class,
+        Stage\Customizer\Customizer::class,
+        Stage\Providers\ShopFilters::class,
+        Stage\Providers\ShopExtras::class,
+        Stage\Providers\ShopCheckout::class,
 	),
 
 	/*

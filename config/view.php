@@ -68,26 +68,6 @@ return array(
 
 	/*
 	|--------------------------------------------------------------------------
-	| View Composers
-	|--------------------------------------------------------------------------
-	|
-	| View composers allow data to always be passed to certain views. This can
-	| be useful when passing data to components such as hero elements,
-	| navigation, banners, etc.
-	|
-	*/
-
-	'composers'  => array_merge(
-		array(
-			// Add your own
-			// App\Composers\Alert::class,
-            Stage\View\Composers\Post::class,
-		),
-		stage_config( 'view.composers' )
-	),
-
-	/*
-	|--------------------------------------------------------------------------
 	| View Directives
 	|--------------------------------------------------------------------------
 	|
@@ -101,32 +81,5 @@ return array(
 			'asset' => Roots\Acorn\Assets\AssetDirective::class,
 		),
 		stage_config( 'view.directives' )
-	),
-
-	/*
-	|--------------------------------------------------------------------------
-	| Blade Component Aliases
-	|--------------------------------------------------------------------------
-	|
-	| Component aliases allow you to use a shorthand to call a Blade component.
-	| Instead of referencing your components like this:
-	|
-	| @component('components.alert', ['type' => 'warning'])
-	|   {{ __('Page not found') }}
-	| @endcomponent
-	|
-	| You can use an alias instead:
-	|
-	| @alert(['type' => 'error'])
-	|   {{ __('Page not found') }}
-	| @endalert
-	|
-	| Use the key to set the alias and the value to set the path to the
-	| view.
-	|
-	*/
-
-	'components' => array(
-		'alert' => 'components.alert',
 	),
 );
